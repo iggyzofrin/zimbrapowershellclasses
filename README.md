@@ -8,13 +8,13 @@ This script uses Zimbra Admin Soap API, typically something like https://servern
 # Using the script
 Get current directory and include the file in your own script. You can either include the script with " . ZimbraManagementClasses.ps1" or below recommended way:
 
-function Get-ScriptDirectory {
-    $Invocation = (Get-Variable MyInvocation -Scope 1).Value;
-    if($Invocation.PSScriptRoot) { $Invocation.PSScriptRoot}
-    Elseif($Invocation.MyCommand.Path) { Split-Path $Invocation.MyCommand.Path }
-    else { $Invocation.InvocationName.Substring(0,$Invocation.InvocationName.LastIndexOf("\")); }
-}
-$scriptPath = Get-ScriptDirectory;
-. $scriptPath"\ZimbraManagementClasses.ps1"
+function Get-ScriptDirectory {<br />
+    $Invocation = (Get-Variable MyInvocation -Scope 1).Value;<br />
+    if($Invocation.PSScriptRoot) { $Invocation.PSScriptRoot}<br />
+    Elseif($Invocation.MyCommand.Path) { Split-Path $Invocation.MyCommand.Path }<br />
+    else { $Invocation.InvocationName.Substring(0,$Invocation.InvocationName.LastIndexOf("\")); }<br />
+}<br />
+$scriptPath = Get-ScriptDirectory;<br />
+. $scriptPath"\ZimbraManagementClasses.ps1"<br />
 
 
